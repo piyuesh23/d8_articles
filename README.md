@@ -38,10 +38,10 @@ $config_directories = array(
 * Create the image style on dev instance & test it.(Lets say we created an image style to scale images to 100X200 & named it as 100 x 200)
 * Browse to admin/config/development/configuration/single/export & select image style under configuration style. Choose the image style we created under configuration name drop-down.
 ![](export_config.gif)
-
 Alternatively, we can use drush config commands to do the same:
 drush cli: List all the available configurations
 drush cget [config_name]: In our case, it would be  
 ```drush cget image.style.100_x_200```
 ![](drush_cget_image_style.png)
+* Copy this config & create a file with name image.style.100_x_200.yml inside sync directory created in 1st step.
 * 
