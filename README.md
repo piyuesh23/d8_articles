@@ -44,4 +44,6 @@ Alternatively, we can use drush config commands to do the same:
 * Extract the tarball exported into the ```sync``` directory created in 1st step. If using drush, only the updated or new configurations will be exported into sync directory automatically.
 * Push the changes to version control system in use(GIT, SVN etc.).
 * Pull the changes on staging server. If the configuration is exported for the first time, there will be a lot of configuration files getting pulled in, else it will be only the updated or new configurations.
-* Browse to ```admin/config/development/configuration```. You shall see an error message in case the UUIDs don't match.
+* Browse to ```admin/config/development/configuration```. An error message is displayed in case the UUIDs don't match.
+![](config_sync_error.png)
+Otherwise, 
