@@ -28,6 +28,10 @@ The CMI interface gives us following 2 options for exporting the configuration:
 
 To understand the process, lets assume we need to create an image style test it on dev & then push it across to both stage & prod. In a world without CMI, the process would be to create it on dev, test it & then recreate it again over the other instances(stage & prod). With CMI, the steps would be as follows:
 * Create the image style on dev instance & test it.(Lets say we created an image style to scale images to 100X200 & named it as 100 x 200)
-* Browse to admin/config/development/configuration/single/export & select image style under configuration style. Choose the image style we created under configuraiton name drop-down.
+* Browse to admin/config/development/configuration/single/export & select image style under configuration style. Choose the image style we created under configuration name drop-down.
+![](export_config.gif)
 
-
+Alternatively, we can use drush config commands to do the same:
+drush cli: List all the available configurations
+drush cget [config_name]: In our case, it would be  
+```drush cget image.style.100_x_200```
