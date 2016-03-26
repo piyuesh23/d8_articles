@@ -36,14 +36,12 @@ $config_directories = array(
 );
 ```
 * Create the image style on dev instance & test it.(Lets say we created an image style to scale images to 100X200 & named it as 100 x 200)
-* Browse to admin/config/development/configuration/single/export & select image style under configuration style. Choose the image style we created under configuration name drop-down.
-![](export_config.gif)
+* Browse to ```/admin/config/development/configuration/full/export``` & click on export button. This will download a tarball of all the configurations in the system.
+![](config_export_full.png)
 Alternatively, we can use drush config commands to do the same:
-drush cli: List all the available configurations
-drush cget [config_name]: In our case, it would be  
-```drush cget image.style.100_x_200```
-![](drush_cget_image_style.png)
-* Copy this config & create a file with name image.style.100_x_200.yml inside sync directory created in 1st step.
-* Push it to your version control system.(GIT/SVN etc.)
-* Pull the codebase on staging.
-* 
+```drush cex```
+![](drush_config_export_full.png)
+* Extract the tarball exported into the ```sync``` directory created in 1st step. If using drush, only the updated or new configurations will be exported into sync directory automatically.
+* Push the changes to version control system in use(GIT, SVN etc.).
+* Pull the changes on staging server. If the configuration is exported for the first time, there will be a lot of configuration files getting pulled in, else it will be only the updated or new configurations.
+* Browse to ```admin/config/development/configuration```. You shall see an error message in case the UUIDs don't match.
