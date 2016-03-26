@@ -6,7 +6,7 @@ Drupal 8 allows us to export configuration as YAML files. These can later be imp
 * How to import/export single configuration?
 * How to perform a bulk export of all the configurations on a site?
 * How to synchronize configuration in a dev > stage > prod workflow?
-
+* Running Drupal 8 with the configuration on file rather than Database.
 
 ### Enabling the module:
 The  first step to get started with CMI is to enable the **Configuration Manager** module that bundles with Drupal 8 core.
@@ -21,7 +21,7 @@ The CMI interface gives us following 2 options for exporting the configuration:
 ![](export_multiple_single.gif)
 
 ### How to synchronize configuration in a dev > stage > prod workflow?
-**P.S.** To move configuration across instances, its necessary for the components to have the same UUID. So, dev/stage/prod instances need to be clones of each other. 
+**P.S.** To move configuration across instances, its necessary for the components to have the same UUID. Dev/Stage/Prod instances need to be clones of each other. 
 
  *CMI is not built for synchronizing a component from qed42.com to example.com.*
 ![](uuid_yml.png)
@@ -44,4 +44,6 @@ drush cget [config_name]: In our case, it would be
 ```drush cget image.style.100_x_200```
 ![](drush_cget_image_style.png)
 * Copy this config & create a file with name image.style.100_x_200.yml inside sync directory created in 1st step.
+* Push it to your version control system.(GIT/SVN etc.)
+* Pull the codebase on staging.
 * 
